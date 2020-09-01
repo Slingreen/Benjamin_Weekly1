@@ -152,96 +152,46 @@ void Task4()
 }
 
 
-// Task 5 of the weekly assignment, honetly didnt quite get this one, is it really this simple?
+// Task 5 of the weekly assignment
 void Task5()
 {
+    // String array containing all the boring bits
+    std::string line[5];
+    line[0] = "\n     1   2   3   4   5   6\n    --- --- --- --- --- ---\nA ";
+    line[1] = " A\n    --- --- --- --- --- ---\nB ";
+    line[2] = " B\n    --- --- --- --- --- ---\nC ";
+    line[3] = " C\n    --- --- --- --- --- ---\nD ";
+    line[4] = " D\n    --- --- --- --- --- ---\n     1   2   3   4   5   6\n\n";
+
+    // Helps changing color
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);	
-   
-    std::cout
-        << "\n     1   2   3   4   5   6\n"
-        << "    --- --- --- --- --- ---\n"
-        << "A ";
-    for (int i = 0; i < 13; i++) 
-    {
-        if (i % 2)
-        {
-            SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
-            std::cout
-                << '*';
-        }
-        else
-        {
-            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN);
-            std::cout <<
-                " : ";
-        }
-    }
-    
-    std::cout
-        << " A\n"
-        << "    --- --- --- --- --- ---\n"
-        << "B ";
-    for (int i = 0; i < 13; i++)
-    {
-        if (i % 2)
-        {
-            SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
-            std::cout
-                << '*';
-        }
-        else
-        {
-            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN);
-            std::cout <<
-                " : ";
-        }
-    }
-    std::cout
-        << " B\n"
-        << "    --- --- --- --- --- ---\n"
-        << "C ";
 
-    for (int i = 0; i < 13; i++)
-    {
-        if (i % 2)
+    // For loop that draws the thingy
+    for(int j = 0; j<9; j++)
+    { 
+        if (j % 2) // If there is anything left after dividing by 2
         {
-            SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
-            std::cout
-                << '*';
+            for (int i = 0; i < 13; i++)
+            {
+                if (i % 2) // If there is anything left after dividing by 2
+                {
+                    SetConsoleTextAttribute(hConsole, FOREGROUND_RED); // Sets color to red
+                    std::cout
+                        << '*';
+                }
+                else
+                {
+                    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN); // Returns color
+                    std::cout <<
+                        " : ";
+                }
+            }
         }
-        else
+        else // Writes the boring stuff
         {
-            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN);
-            std::cout <<
-                " : ";
-        }
-    }
-    
-    std::cout
-        << " C\n"
-        << "    --- --- --- --- --- ---\n"
-        << "D ";
-        
-    for (int i = 0; i < 13; i++)
-    {
-        if (i % 2)
-        {
-            SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
-            std::cout
-                << '*';
-        }
-        else
-        {
-            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN);
-            std::cout <<
-                " : ";
+            std::cout << line[j/2];
         }
     }
-
-    std::cout
-        <<" D\n"
-        << "    --- --- --- --- --- ---\n"
-        << "     1   2   3   4   5   6\n\n";
 }
 
 
