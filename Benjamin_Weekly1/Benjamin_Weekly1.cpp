@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <string>
+#include <Windows.h>
 
 // Different functions used throughout the code
 void Task1();
@@ -154,16 +155,91 @@ void Task4()
 // Task 5 of the weekly assignment, honetly didnt quite get this one, is it really this simple?
 void Task5()
 {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);	
+   
     std::cout
         << "\n     1   2   3   4   5   6\n"
         << "    --- --- --- --- --- ---\n"
-        << "A  : * : * : * : * : * : * :  A\n"
+        << "A ";
+    for (int i = 0; i < 13; i++) 
+    {
+        if (i % 2)
+        {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+            std::cout
+                << '*';
+        }
+        else
+        {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN);
+            std::cout <<
+                " : ";
+        }
+    }
+    
+    std::cout
+        << " A\n"
         << "    --- --- --- --- --- ---\n"
-        << "B  : * : * : * : * : * : * :  B\n"
+        << "B ";
+    for (int i = 0; i < 13; i++)
+    {
+        if (i % 2)
+        {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+            std::cout
+                << '*';
+        }
+        else
+        {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN);
+            std::cout <<
+                " : ";
+        }
+    }
+    std::cout
+        << " B\n"
         << "    --- --- --- --- --- ---\n"
-        << "C  : * : * : * : * : * : * :  C\n"
+        << "C ";
+
+    for (int i = 0; i < 13; i++)
+    {
+        if (i % 2)
+        {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+            std::cout
+                << '*';
+        }
+        else
+        {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN);
+            std::cout <<
+                " : ";
+        }
+    }
+    
+    std::cout
+        << " C\n"
         << "    --- --- --- --- --- ---\n"
-        << "D  : * : * : * : * : * : * :  D\n"
+        << "D ";
+        
+    for (int i = 0; i < 13; i++)
+    {
+        if (i % 2)
+        {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+            std::cout
+                << '*';
+        }
+        else
+        {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN);
+            std::cout <<
+                " : ";
+        }
+    }
+
+    std::cout
+        <<" D\n"
         << "    --- --- --- --- --- ---\n"
         << "     1   2   3   4   5   6\n\n";
 }
