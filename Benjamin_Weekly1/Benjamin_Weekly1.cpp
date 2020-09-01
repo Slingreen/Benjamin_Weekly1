@@ -10,11 +10,14 @@
 
 #include <iostream>
 #include <string>
+#include <Windows.h>
 
 // Different functions used throughout the code
 void Task1();
 void Task2();
 void Task3();
+void Task4();
+void Task5();
 void writeMenu();
 char Read_Command(const char* c);
 
@@ -34,6 +37,8 @@ int main()
             case 'A': Task1(); break;
             case 'B': Task2(); break;
             case 'C': Task3(); break;
+            case 'D': Task4(); break;
+            case 'E': Task5(); break;
             default: writeMenu(); break;
         }
         command = Read_Command("Command");
@@ -126,6 +131,45 @@ void Task3()
 }
 
 
+// Task 4 of the weekly assignment
+void Task4()
+{
+    int choice;
+    std::cout
+        << "\n\tWhat is your favourite drink?\n"
+        << "\t\t 1. Coffe\n"
+        << "\t\t 2. Tea\n"
+        << "\t\t 3. Coca Cola\n"
+        << "\t\t:  ";
+    std::cin >> choice;
+    switch (choice)
+    {
+        case 1: std::cout << "Coffe is delicous\n\n"; break;
+        case 2: std::cout << "Tea gives peace of mind\n\n"; break;
+        case 3: std::cout << "Coke will give you a white smile\n\n"; break;
+        default: std::cout << "Oh, you have an other preferance? Okay then\n\n"; break;
+    }
+}
+
+
+// Task 5 of the weekly assignment, honetly didnt quite get this one, is it really this simple?
+void Task5()
+{
+    std::cout
+        << "\n     1   2   3   4   5   6\n"
+        << "    --- --- --- --- --- ---\n"
+        << "A  : * : * : * : * : * : * :  A\n"
+        << "    --- --- --- --- --- ---\n"
+        << "B  : * : * : * : * : * : * :  B\n"
+        << "    --- --- --- --- --- ---\n"
+        << "C  : * : * : * : * : * : * :  C\n"
+        << "    --- --- --- --- --- ---\n"
+        << "D  : * : * : * : * : * : * :  D\n"
+        << "    --- --- --- --- --- ---\n"
+        << "     1   2   3   4   5   6\n\n";
+}
+
+
 // A tiny function just to read input commands
 char Read_Command(const char* c)
 {
@@ -142,5 +186,7 @@ void writeMenu()
                 << "\t A    Runs task 1\n"
                 << "\t B    Runs task 2\n"
                 << "\t C    Runs task 3\n"
+                << "\t D    Runs task 3\n"
+                << "\t E    Runs task 3\n"
                 << "\t Q    Quits program\n";
 }
