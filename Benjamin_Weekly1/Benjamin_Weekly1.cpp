@@ -10,7 +10,6 @@
 
 #include <iostream>
 #include <string>
-#include <Windows.h>
 
 // Different functions used throughout the code
 void Task1();
